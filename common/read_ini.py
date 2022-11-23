@@ -4,7 +4,7 @@
 import configparser
 import os.path
 
-from common.project_variable import PROJECT_PATH
+from common.base.project_env import PROJECT_PATH
 
 
 class ParserToDict(configparser.ConfigParser):
@@ -31,7 +31,7 @@ def dict_ini_file(file_name):
     return ptd.as_dict()
 
 
-def project_base_config():
+def project_config():
     """project base config
     """
     return dict_ini_file('config/conf.ini')
