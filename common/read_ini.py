@@ -20,7 +20,7 @@ class ParserToDict(configparser.ConfigParser):
         return to_dict
 
 
-def dict_ini_file(file_name):
+def ini_to_dict(file_name):
     """
     read ini file to dict
     :param file_name: file path and name of PROJECT_PATH
@@ -34,5 +34,13 @@ def dict_ini_file(file_name):
 def project_config():
     """project base config
     """
-    return dict_ini_file('config/conf.ini')
+    return ini_to_dict('config/conf.ini')
+
+
+def service_api_conf(service, api):
+    return ini_to_dict(os.path.join('config/services_configs/{}/api.ini'.format(service))).get(api)
+
+
+def service_host_conf(env, service):
+    return ini_to_dict('config/host.ini').get(env).get(service)
 

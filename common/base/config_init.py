@@ -38,6 +38,12 @@ class _LogConfig:
     else:
         file_path = _file_path
 
+    _file_name = all_config.get('log_config').get('file_name')
+    if _file_name == '' or _file_handler is None:
+        file_name = ''
+    else:
+        file_name = _file_name
+
     _level = all_config.get('log_config').get('level')
     if _level == 'debug' or _level is None or _level == '':
         level = logging.DEBUG
