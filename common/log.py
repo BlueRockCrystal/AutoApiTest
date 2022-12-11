@@ -82,20 +82,20 @@ def info(msg):
 
 @_caller_info
 def warning(msg):
-    """info log func
+    """warning log func
     """
     _logger.warning(msg)
 
 
 @_caller_info
 def error(msg):
-    """info log func
+    """error log func
     """
     _logger.error(msg)
 
 
 @_caller_info
 def critical(msg):
-    """info log func
+    """critical log func
     """
     _logger.critical(msg)
