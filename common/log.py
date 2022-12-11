@@ -99,3 +99,4 @@ def critical(msg):
     """critical log func
     """
     _logger.critical(msg)
+
