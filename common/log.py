@@ -47,10 +47,8 @@ if ProjectConfig.log.file_handler:
     _log_file_name = ProjectConfig.log.file_name
     if not _log_file_name:
         _log_file_name = '{}.log'.format(datetime.now().strftime('%Y-%m-%d_%H-%M-%S'))
-    _file_name = os.path.join(_log_file_path, _log_file_name)
-    _th = handlers.TimedRotatingFileHandler(filename=_file_name,
-                                            backupCount=10,
-                                            encoding='utf-8')
+    _file_name = str(os.path.join(_log_file_path, _log_file_name))
+    _th = handlers.TimedRotatingFileHandler(filename=_file_name, backupCount=10, encoding='utf-8')
     _th.setFormatter(_log_formatter)
     _logger.addHandler(_th)
 

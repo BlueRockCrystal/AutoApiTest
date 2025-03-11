@@ -37,7 +37,7 @@ class RequestTranslate:
         self.req_body_type = self._config.get('body_type')
 
         self.req_timeout_assert = self._timeout()
-        self.req_timecost_expect = self._timecost()
+        self.req_time_cost_expect = self._time_cost()
 
     def _api_config(self):
         """get ini file api config
@@ -163,16 +163,16 @@ class RequestTranslate:
             return int(common_expect)
         return 0
 
-    def _timecost(self):
+    def _time_cost(self):
         """request time cost expect
         """
-        req_expect = self._req_dict.get('timecost_expect')
+        req_expect = self._req_dict.get('time_cost_expect')
         if req_expect != 0:
             return req_expect
-        api_expect = self._config.get('timecost_expect')
+        api_expect = self._config.get('time_cost_expect')
         if api_expect:
             return int(api_expect)
-        common_expect = self._common_config.get('timecost_expect')
+        common_expect = self._common_config.get('time_cost_expect')
         if common_expect:
             return int(common_expect)
         return 0

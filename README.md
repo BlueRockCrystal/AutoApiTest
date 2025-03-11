@@ -14,5 +14,5 @@
 ├── config # 配置文件目录
 ├── logs # 日志目录，需要打印日志到文件默认路径，也支持指定
 ├── requirements.txt # 依赖requirements
-└── test_cases # 测试case目录
+└── test_case # 测试case目录
 ```
